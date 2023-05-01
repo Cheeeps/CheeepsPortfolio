@@ -12,7 +12,7 @@ body, section {
   margin: 0;
   padding: 0;
   background-color: var(--main-color);
-
+  overflow-x: hidden;
 }
 
 :root {
@@ -179,6 +179,7 @@ nav ul li a:hover {
 #home {
   background: url(image/mainbg.jpg);
   height: 100vh;
+  overflow: hidden;
 }
 
 #greetings {
@@ -188,65 +189,55 @@ nav ul li a:hover {
   padding-left: 70px;
 }
 
-.spinner {
-  width: 44.8px;
-  height: 44.8px;
-  animation: spinner-y0fdc1 2s infinite ease;
-  transform-style: preserve-3d;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#home p {
+  width: 50%;
+  font-size: .8em;
+  color: var(--sec-color);
+  padding: 5px 250px 10px 80px;
 }
 
-.spinner > div {
-  background-color: rgba(61,167,57,0.2);
-  height: 100%;
-  position: absolute;
+#platform-link {
   width: 100%;
-  border: 2.2px solid #3da739;
+  height: 100%;
+}
+#platform-link ul{
+  display: flex;
+  padding-left: 50px;
+  justify-content: flex-start;
 }
 
-.spinner div:nth-of-type(1) {
-  transform: translateZ(-22.4px) rotateY(180deg);
+#platform-link ul li {
+  padding: 0 20px;
 }
 
-.spinner div:nth-of-type(2) {
-  transform: rotateY(-270deg) translateX(50%);
-  transform-origin: top right;
+#platform-link ul a {
+  font-size: 25px;
+}
+.fa-facebook {
+  padding: 7px 8px;
+  color: var(--sec-color);
+  background-color: var(--third-color);
+  border-radius: 50%;
 }
 
-.spinner div:nth-of-type(3) {
-  transform: rotateY(270deg) translateX(-50%);
-  transform-origin: center left;
+.fa-discord {
+  padding: 7px 5px;
+  color: var(--sec-color);
+  background-color: var(--third-color);
+  border-radius: 50%;
 }
 
-.spinner div:nth-of-type(4) {
-  transform: rotateX(90deg) translateY(-50%);
-  transform-origin: top center;
+.fa-github {
+  padding: 7px 8px;
+  color: var(--sec-color);
+  background-color: var(--third-color);
+  border-radius: 50%;
 }
 
-.spinner div:nth-of-type(5) {
-  transform: rotateX(-90deg) translateY(50%);
-  transform-origin: bottom center;
-}
 
-.spinner div:nth-of-type(6) {
-  transform: translateZ(22.4px);
-}
-
-@keyframes spinner-y0fdc1 {
-  0% {
-     transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
-  }
-
-  50% {
-     transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
-  }
-
-  100% {
-     transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
-  }
+#platform-link ul li:hover {
+  transition: all ease .5s;
+  transform: scale(1.1);
 }
 
 @media (max-width:600px) {
@@ -256,11 +247,84 @@ nav ul li a:hover {
     padding-top: 40px;
     padding-left: 20px ;
   }
+  #home p {
+    display: none;
+  }
+  #platform-link ul{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding: 200px 0 20px 0;
+  }
+
+  #platform-link ul{
+    display: flex;
+    justify-content: center;
+  }
 
   .spinner {
-    top: 45%;
-    left: 42%;
-    transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  animation: spinner-y0fdc1 2s infinite ease;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 38%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  }
+
+  .spinner:hover {
+    transform: scale(1.5);
+  }
+
+  .spinner > div {
+    background-color: var(--main-color);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border: 2.2px solid var(--fourth-color);
+  }
+
+  .spinner div:nth-of-type(1) {
+    transform: translateZ(-22.4px) rotateY(180deg);
+  }
+
+  .spinner div:nth-of-type(2) {
+    transform: rotateY(-270deg) translateX(50%);
+    transform-origin: top right;
+  }
+
+  .spinner div:nth-of-type(3) {
+    transform: rotateY(270deg) translateX(-50%);
+    transform-origin: center left;
+  }
+
+  .spinner div:nth-of-type(4) {
+    transform: rotateX(90deg) translateY(-50%);
+    transform-origin: top center;
+  }
+
+  .spinner div:nth-of-type(5) {
+    transform: rotateX(-90deg) translateY(50%);
+    transform-origin: bottom center;
+  }
+
+  .spinner div:nth-of-type(6) {
+    transform: translateZ(22.4px);
+  }
+
+  @keyframes spinner-y0fdc1 {
+    0% {
+      transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+    }
+
+    50% {
+      transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+    }
+
+    100% {
+      transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+    }
   }
 
 }
